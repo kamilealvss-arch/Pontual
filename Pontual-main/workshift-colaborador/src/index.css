@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* ============================================================
+   FUNDO REVISADO (GLOW CONCENTRADO NO CANTO INFERIOR DIREITO)
+   (Aplicar apenas nas páginas de Folgas/Trocas e Atestados)
+   ============================================================ */
+
+/* Aplicar ao container principal ou body das páginas alvo */
+.colaborador-page-container {
+    background-color: #000000; /* Preto Puro */
+    min-height: 100vh;
+}
+
+.background-glow {
+    position: fixed;
+    width: 620px;
+    height: 620px;
+    border-radius: 50%;
+    filter: blur(200px); /* Alto nível de desfoque para transição ampla e esfumaçada */
+    opacity: 0.06; /* Opacidade muito baixa e sutil */
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Luz vermelha empurrada para fora (off-canvas) e afastada da luz amarela */
+.glow-one {
+    background: #96183C; /* Vermelho Carmesim profundo */
+    bottom: -240px;
+    right: 280px;
+}
+
+/* Luz amarela/âmbar ancorada no extremo canto inferior direito off-canvas */
+.glow-two {
+    background: #e58a13; /* Amarelo dourado / Âmbar */
+    bottom: -320px;
+    right: -160px;
+}
+
+/* Garante que o conteúdo existente permaneça acima */
+.card-content-area, .request-header {
+    z-index: 1; /* Colocar acima do glow */
+}
